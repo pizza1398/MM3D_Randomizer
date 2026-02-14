@@ -31,7 +31,7 @@ include $(DEVKITARM)/3ds_rules
 #     - icon.png
 #     - <libctru folder>/default_icon.png
 #---------------------------------------------------------------------------------
-APP_TITLE   :=  Majoras Mask 3D Randomizer
+APP_TITLE   :=  MM3D Randomizer: FR-TEST
 APP_AUTHOR  :=  Z3DR Team
 APP_DESCRIPTION:= A Randomized Majora's Mask 
 TARGET		:=	$(notdir $(CURDIR))
