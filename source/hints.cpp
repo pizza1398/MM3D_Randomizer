@@ -168,7 +168,7 @@ static void AddHint(Text hint, const LocationKey gossipStone, const std::vector<
   if (hint.GetEnglish().find("$")) {
     icons.push_back(B_BUTTON);
   }
-  CustomMessages::CreateMessage(messageId, 0xFFFF, 0x3FFFFFFF, 0xFF0020, {hint.GetEnglish().c_str()}, colors, icons, {}, 0x0, false, false);
+  CustomMessages::CreateMessage(messageId, 0xFFFF, 0x3FFFFFFF, 0xFF0020, {hint.GetEnglish().c_str(), hint.GetFrench().c_str(), hint.GetSpanish().c_str()}, colors, icons, {}, 0x0, false, false);
   //CreateMessageFromTextObject(messageId, 0, 2, 3, AddColorsAndFormat(hint, colors));
   //CreateMessageFromTextObject(sariaMessageId, 0, 2, 3, AddColorsAndFormat(hint + EVENT_TRIGGER(), colors));
 }
@@ -441,45 +441,45 @@ void CreateTingleHintText() {
       if (Settings::ShuffleTingleMaps.Is(true)) {
         // Logic: Get item names from location.
         // Create custom message for each tingle location (6)
-        std::string clockTownMap = ItemTable(Location(TINGLE_N_CLOCK_TOWN_CT)->GetPlacedItemKey()).GetName().GetEnglish();
-        std::string woodfallMap = ItemTable(Location(TINGLE_N_CLOCK_TOWN_WF)->GetPlacedItemKey()).GetName().GetEnglish();
-        std::string snowHeadMap = ItemTable(Location(TINGLE_TWIN_ISLANDS_SH)->GetPlacedItemKey()).GetName().GetEnglish();
-        std::string romaniMap = ItemTable(Location(TINGLE_TWIN_ISLANDS_RR)->GetPlacedItemKey()).GetName().GetEnglish();
-        std::string greatBayMap = ItemTable(Location(TINGLE_GBC_GB)->GetPlacedItemKey()).GetName().GetEnglish();
-        std::string stoneTowerMap = ItemTable(Location(TINGLE_GBC_ST)->GetPlacedItemKey()).GetName().GetEnglish();
+        std::string clockTownMap = ItemTable(Location(TINGLE_N_CLOCK_TOWN_CT)->GetPlacedItemKey()).GetName().GetFrench();
+        std::string woodfallMap = ItemTable(Location(TINGLE_N_CLOCK_TOWN_WF)->GetPlacedItemKey()).GetName().GetFrench();
+        std::string snowHeadMap = ItemTable(Location(TINGLE_TWIN_ISLANDS_SH)->GetPlacedItemKey()).GetName().GetFrench();
+        std::string romaniMap = ItemTable(Location(TINGLE_TWIN_ISLANDS_RR)->GetPlacedItemKey()).GetName().GetFrench();
+        std::string greatBayMap = ItemTable(Location(TINGLE_GBC_GB)->GetPlacedItemKey()).GetName().GetFrench();
+        std::string stoneTowerMap = ItemTable(Location(TINGLE_GBC_ST)->GetPlacedItemKey()).GetName().GetFrench();
         
         CustomMessages::CreateMessage(0x1D11, 0xFFFF, 0x3FF0A005, 0xFF1001,
-        {clockTownMap.insert(0, "#").append("#    #5 Rupees#&").append(woodfallMap.insert(0, "#").c_str()).append("#     #40 Rupees#").append("&#No thanks#").c_str()},
+        {clockTownMap.insert(0, "#").append("#    #5 Rubis#&").append(woodfallMap.insert(0, "#").c_str()).append("#     #40 Rubis#").append("&#Non merci#").c_str()},
         {QM_GREEN, QM_RED, QM_GREEN, QM_RED, QM_GREEN}, {}, {}, 0x0, false, false);
-        clockTownMap = ItemTable(Location(TINGLE_N_CLOCK_TOWN_CT)->GetPlacedItemKey()).GetName().GetEnglish();
-        woodfallMap = ItemTable(Location(TINGLE_N_CLOCK_TOWN_WF)->GetPlacedItemKey()).GetName().GetEnglish();
+        clockTownMap = ItemTable(Location(TINGLE_N_CLOCK_TOWN_CT)->GetPlacedItemKey()).GetName().GetFrench();
+        woodfallMap = ItemTable(Location(TINGLE_N_CLOCK_TOWN_WF)->GetPlacedItemKey()).GetName().GetFrench();
 
         CustomMessages::CreateMessage(0x1D12, 0xFFFF, 0x3FF0A014, 0xFF1001,
-        {woodfallMap.insert(0, "#").append("#    #20 Rupees#&").append(snowHeadMap.insert(0, "#").c_str()).append("#     #40 Rupees#").append("&#No thanks#").c_str()},
+        {woodfallMap.insert(0, "#").append("#    #20 Rubis#&").append(snowHeadMap.insert(0, "#").c_str()).append("#     #40 Rubis#").append("&#Non merci#").c_str()},
         {QM_GREEN, QM_RED, QM_GREEN, QM_RED, QM_GREEN}, {}, {}, 0x0, false, false);
-        woodfallMap = ItemTable(Location(TINGLE_N_CLOCK_TOWN_WF)->GetPlacedItemKey()).GetName().GetEnglish();
-        snowHeadMap = ItemTable(Location(TINGLE_TWIN_ISLANDS_SH)->GetPlacedItemKey()).GetName().GetEnglish();
+        woodfallMap = ItemTable(Location(TINGLE_N_CLOCK_TOWN_WF)->GetPlacedItemKey()).GetName().GetFrench();
+        snowHeadMap = ItemTable(Location(TINGLE_TWIN_ISLANDS_SH)->GetPlacedItemKey()).GetName().GetFrench();
 
         CustomMessages::CreateMessage(0x1D13, 0xFFFF, 0x3FF0A014, 0xFF1001,
-        {snowHeadMap.insert(0, "#").append("#    #20 Rupees#&").append(romaniMap.insert(0, "#").c_str()).append("#     #40 Rupees#").append("&#No thanks#").c_str()},
+        {snowHeadMap.insert(0, "#").append("#    #20 Rubis#&").append(romaniMap.insert(0, "#").c_str()).append("#     #40 Rubis#").append("&#Non merci#").c_str()},
         {QM_GREEN, QM_RED, QM_GREEN, QM_RED, QM_GREEN}, {}, {}, 0x0, false, false);
-        snowHeadMap = ItemTable(Location(TINGLE_TWIN_ISLANDS_SH)->GetPlacedItemKey()).GetName().GetEnglish();
-        romaniMap = ItemTable(Location(TINGLE_TWIN_ISLANDS_RR)->GetPlacedItemKey()).GetName().GetEnglish();
+        snowHeadMap = ItemTable(Location(TINGLE_TWIN_ISLANDS_SH)->GetPlacedItemKey()).GetName().GetFrench();
+        romaniMap = ItemTable(Location(TINGLE_TWIN_ISLANDS_RR)->GetPlacedItemKey()).GetName().GetFrench();
 
         CustomMessages::CreateMessage(0x1D14, 0xFFFF, 0x3FF0A014, 0xFF1001,
-        {romaniMap.insert(0, "#").append("#    #20 Rupees#&").append(greatBayMap.insert(0, "#").c_str()).append("#     #40 Rupees#").append("&#No thanks#").c_str()},
+        {romaniMap.insert(0, "#").append("#    #20 Rubis#&").append(greatBayMap.insert(0, "#").c_str()).append("#     #40 Rubis#").append("&#Non merci#").c_str()},
         {QM_GREEN, QM_RED, QM_GREEN, QM_RED, QM_GREEN}, {}, {}, 0x0, false, false);
-        romaniMap = ItemTable(Location(TINGLE_TWIN_ISLANDS_RR)->GetPlacedItemKey()).GetName().GetEnglish();
-        greatBayMap = ItemTable(Location(TINGLE_GBC_GB)->GetPlacedItemKey()).GetName().GetEnglish();
+        romaniMap = ItemTable(Location(TINGLE_TWIN_ISLANDS_RR)->GetPlacedItemKey()).GetName().GetFrench();
+        greatBayMap = ItemTable(Location(TINGLE_GBC_GB)->GetPlacedItemKey()).GetName().GetFrench();
 
         CustomMessages::CreateMessage(0x1D15, 0xFFFF, 0x3FF0A014, 0xFF1001,
-        {greatBayMap.insert(0, "#").append("#    #20 Rupees#&").append(stoneTowerMap.insert(0, "#").c_str()).append("#     #40 Rupees#").append("&#No thanks#").c_str()},
+        {greatBayMap.insert(0, "#").append("#    #20 Rubis#&").append(stoneTowerMap.insert(0, "#").c_str()).append("#     #40 Rubis#").append("&#Non merci#").c_str()},
         {QM_GREEN, QM_RED, QM_GREEN, QM_RED, QM_GREEN}, {}, {}, 0x0, false, false);
-        greatBayMap = ItemTable(Location(TINGLE_GBC_GB)->GetPlacedItemKey()).GetName().GetEnglish();
-        stoneTowerMap = ItemTable(Location(TINGLE_GBC_ST)->GetPlacedItemKey()).GetName().GetEnglish();
+        greatBayMap = ItemTable(Location(TINGLE_GBC_GB)->GetPlacedItemKey()).GetName().GetFrench();
+        stoneTowerMap = ItemTable(Location(TINGLE_GBC_ST)->GetPlacedItemKey()).GetName().GetFrench();
 
         CustomMessages::CreateMessage(0x1D16, 0xFFFF, 0x3FF0A014, 0xFF1001,
-        {stoneTowerMap.insert(0, "#").append("#    #20 Rupees#&").append(clockTownMap.insert(0, "#").c_str()).append("#     #40 Rupees#").append("&#No thanks#").c_str()},
+        {stoneTowerMap.insert(0, "#").append("#    #20 Rubis#&").append(clockTownMap.insert(0, "#").c_str()).append("#     #40 Rubis#").append("&#Non merci#").c_str()},
         {QM_GREEN, QM_RED, QM_GREEN, QM_RED, QM_GREEN}, {}, {}, 0x0, false, false);
       }
 }
@@ -496,27 +496,27 @@ static std::string BuildDoorText(const ItemKey itemKey) {
   if (Location(location)->GetParentRegionKey() == NONE) {
     Location(location)->SetParentRegion(LINKS_POCKET);
   }
-  return "#"+GetHintRegion(Location(location)->GetParentRegionKey())->GetHint().GetText().GetEnglish()+"#.";
+  return "#"+GetHintRegion(Location(location)->GetParentRegionKey())->GetHint().GetText().GetFrench()+"#.";
 }
 
 void CreateClockTowerDoorHints() {
   // Create hint text
-  std::string ocarinaHint   = "Hey, didn't you have some sort of #musical instrument#?&If I know the Skull Kid, I bet he hid it at "+BuildDoorText(OCARINA_OF_TIME);
-  std::string odolwaHint    = "There's one with a #crown# and #jewellery# said to be found at "+BuildDoorText(ODOLWAS_REMAINS);
-  std::string gohtHint      = "Another #extremely sturdy# one with #huge horns# at "+BuildDoorText(GOHTS_REMAINS);
-  std::string gyorgHint     = "One with #giant fins# and #razor sharp teeth# at "+BuildDoorText(GYORGS_REMAINS);
-  std::string twinmoldHint  = "And one with #three eyes# and #enormous mandibles# at "+BuildDoorText(TWINMOLDS_REMAINS);
+  std::string ocarinaHint   = "Dis, t'avais pas un #instrument de musique#?&Je parie que Skull Kid, l'a caché vers "+BuildDoorText(OCARINA_OF_TIME);
+  std::string odolwaHint    = "Y'en a un avec une #couronne# et des #bijoux# situé vers "+BuildDoorText(ODOLWAS_REMAINS);
+  std::string gohtHint      = "Un autre #très solide# avec des #cornes immenses# situé vers "+BuildDoorText(GOHTS_REMAINS);
+  std::string gyorgHint     = "Un qui a des #nageoires géantes# et #dents acérées# situé vers "+BuildDoorText(GYORGS_REMAINS);
+  std::string twinmoldHint  = "Et un avec #trois yeux# et d'#énormes mandibules# situé vers "+BuildDoorText(TWINMOLDS_REMAINS);
   if (StartingOdolwaRemains.Value<u8>() == 1) {
-     odolwaHint    = "There's one with a #crown# and #jewellery# said to be found in "+BuildDoorText(ODOLWAS_REMAINS); 
+     odolwaHint    = "Y'en a un avec une #couronne# et des #bijoux# situé dans "+BuildDoorText(ODOLWAS_REMAINS); 
   }
   if (StartingGohtRemains.Value<u8>() == 1) {
-    gohtHint      = "Another #extremely sturdy# one with #huge horns# in "+BuildDoorText(GOHTS_REMAINS);
+    gohtHint      = "Un autre #très solide# avec des #cornes immenses# situé dans "+BuildDoorText(GOHTS_REMAINS);
   }
   if (StartingGyorgRemains.Value<u8>() == 1) {
-     gyorgHint     = "One with #giant fins# and #razor sharp teeth# in "+BuildDoorText(GYORGS_REMAINS);
+     gyorgHint     = "Un qui a des #nageoires géantes# et #dents acérées# situé dans "+BuildDoorText(GYORGS_REMAINS);
   }
   if (StartingTwinmoldRemains.Value<u8>() == 1){
-     twinmoldHint  = "And one with #three eyes# and #enormous mandibles# in "+BuildDoorText(TWINMOLDS_REMAINS); 
+     twinmoldHint  = "Et un avec #trois yeux# et d'#énormes mandibules# situé dans "+BuildDoorText(TWINMOLDS_REMAINS); 
   }
 
   CustomMessages::CreateMessage(0x0630, (StartingOcarina.Value<u8>() == 0) ? 0x8000 : 0x8002, 0x3FFFFFFF, 0x0FF0211,
