@@ -190,102 +190,123 @@ void CreateBaselineCustomMessages() {
     // Small Keys
     // Woodfall
     CreateMessage(0x6133, 0xFFFF, 0x3FFFFFFF, 0xFF0000, 
-    {"You got a #small key# for the #Woodfall Temple#! Use it to open a locked door in that temple."},
+    {"You got a #small key# for the #Woodfall Temple#! Use it to open a locked door in that temple.",
+        // French
+        "Vous obtenez une #petite clé# du #temple de Bois-Cascade# ! Utilisez-la pour ouvrir une porte de ce donjon."},
     {QM_GREEN, QM_GREEN}, {}, {}, 0x0, false, false);
     // Snowhead
     CreateMessage(0x6134, 0xFFFF, 0x3FFFFFFF, 0xFF0000, 
-    {"You got a #small key# for the #Snowhead Temple#! Use it to open a locked door in that temple."},
+    {"You got a #small key# for the #Snowhead Temple#! Use it to open a locked door in that temple.",
+        "Vous obtenez une #petite clé# du #temple du pic des Neiges# ! Utilisez-la pour ouvrir une porte de ce donjon."},
     {QM_GREEN, QM_MAGENTA}, {}, {}, 0x0, false, false);
     // Great Bay
     CreateMessage(0x6135, 0xFFFF, 0x3FFFFFFF, 0xFF0000, 
-    {"You got a #small key# for the #Great Bay Temple#! Use it to open a locked door in that temple."},
+    {"You got a #small key# for the #Great Bay Temple#! Use it to open a locked door in that temple.",
+        "Vous obtenez une #petite clé# du #temple de la Grande Baie# ! Utilisez-la pour ouvrir une porte de ce donjon."},
     {QM_GREEN, QM_CYAN}, {}, {}, 0x0, false, false);
     // Stone Tower
     CreateMessage(0x6136, 0xFFFF, 0x3FFFFFFF, 0xFF0000, 
-    {"You got a #small key# for the #Stone Tower Temple#! Use it to open a locked door in that temple."},
+    {"You got a #small key# for the #Stone Tower Temple#! Use it to open a locked door in that temple.",
+        "Vous obtenez une #petite clé# du #temple de la forteresse de pierre# ! Utilisez-la pour ouvrir une porte de ce donjon."},
     {QM_GREEN, QM_YELLOW}, {}, {}, 0x0, false, false);
 
     // Maps
     // Woodfall
     CreateMessage(0x6137, 0x003E, 0x3FFFFFFF, 0xFF0000, 
-    {"You found the #dungeon map# for the #Woodfall#!"},
+    {"You found the #dungeon map# for the #Woodfall#!",
+        "Vous obtenez la #carte du donjon# de #Bois-Cascade# !"},
     {QM_GREEN, QM_GREEN}, {}, {}, 0x0, false, false);
 
     // Snowhead
     CreateMessage(0x6138, 0x003E, 0x3FFFFFFF, 0xFF0000, 
-    {"You found the #dungeon map# for the #Snowhead#!"},
+    {"You found the #dungeon map# for the #Snowhead#!",
+        "Vous obtenez la #carte du donjon# du #pic des Neiges# !"},
     {QM_GREEN, QM_MAGENTA}, {}, {}, 0x0, false, false);
 
     // Great Bay
     CreateMessage(0x6139, 0x003E, 0x3FFFFFFF, 0xFF0000, 
-    {"You found the #dungeon map# for the #Great Bay#!"},
+    {"You found the #dungeon map# for the #Great Bay#!",
+        "Vous obtenez la #carte du donjon# de la #Grande Baie# !"},
     {QM_GREEN, QM_CYAN}, {}, {}, 0x0, false, false);
 
     // Stone Tower
     CreateMessage(0x613A, 0x003E, 0x3FFFFFFF, 0xFF0000, 
-    {"You found the #dungeon map# for the #Stone Tower#!"},
+    {"You found the #dungeon map# for the #Stone Tower#!",
+        "Vous obtenez la #carte du donjon# de la #forteresse de pierre# !"},
     {QM_GREEN, QM_YELLOW}, {}, {}, 0x0, false, false);
 
     // Compasses
     // Woodfall
     CreateMessage(0x613B, 0xFFFF, 0x3FFFFFFF, 0xFF0000, 
-    {"You got the #compass# for the #Woodfall Temple#! Now many of the dungeon's hidden things will appear on the map!"},
+    {"You got the #compass# for the #Woodfall Temple#! Now many of the dungeon's hidden things will appear on the map!",
+        "Vous obtenez la #boussole# du #temple de Bois-Cascade#! Certains des secrets de ce donjon seront maintenant visibles sur la carte !"},
     {QM_GREEN, QM_GREEN}, {}, {}, 0x0, false, false);
 
     // Snowhead
     CreateMessage(0x613C, 0xFFFF, 0x3FFFFFFF, 0xFF0000, 
-    {"You got the #compass# for the #Snowhead Temple#! Now many of the dungeon's hidden things will appear on the map!"},
+    {"You got the #compass# for the #Snowhead Temple#! Now many of the dungeon's hidden things will appear on the map!",
+        "Vous obtenez la #boussole# du #temple du pic des Neiges#! Certains des secrets de ce donjon seront maintenant visibles sur la carte !"},
     {QM_GREEN, QM_MAGENTA}, {}, {}, 0x0, false, false);
 
     // Great Bay
     CreateMessage(0x613D, 0xFFFF, 0x3FFFFFFF, 0xFF0000, 
-    {"You got the #compass# for the #Great Bay Temple#! Now many of the dungeon's hidden things will appear on the map!"},
+    {"You got the #compass# for the #Great Bay Temple#! Now many of the dungeon's hidden things will appear on the map!",
+        "Vous obtenez la #boussole# du #temple de la Grande Baie#! Certains des secrets de ce donjon seront maintenant visibles sur la carte !"},
     {QM_GREEN, QM_CYAN}, {}, {}, 0x0, false, false);
 
     // Stone Tower
     CreateMessage(0x613E, 0xFFFF, 0x3FFFFFFF, 0xFF0000, 
-    {"You got the #compass# for the #Stone Tower Temple#! Now many of the dungeon's hidden things will appear on the map!"},
+    {"You got the #compass# for the #Stone Tower Temple#! Now many of the dungeon's hidden things will appear on the map!",
+        "Vous obtenez la #boussole# du #temple de la forteresse de pierre#! Certains des secrets de ce donjon seront maintenant visibles sur la carte !"},
     {QM_GREEN, QM_YELLOW}, {}, {}, 0x0, false, false);
 
     // Boss Keys
     // Woodfall
     CreateMessage(0x613F, 0xFFFF, 0x3FFFFFFF, 0xFF0000, 
-    {"You got the #boss key# for the #Woodfall Temple#! Now you can enter the chamber where the boss lurks!"},
+    {"You got the #boss key# for the #Woodfall Temple#! Now you can enter the chamber where the boss lurks!",
+        "Vous obtenez la #grande clé# du #temple de Bois-Cascade# !  Vous pouvez maintenant pénétrer dans l'antre du boss !"},
     {QM_GREEN, QM_RED}, {}, {}, 0x0, false, false);
 
     // Snowhead
     CreateMessage(0x6140, 0xFFFF, 0x3FFFFFFF, 0xFF0000, 
-    {"You got the #boss key# for the #Snowhead Temple#! Now you can enter the chamber where the boss lurks!"},
+    {"You got the #boss key# for the #Snowhead Temple#! Now you can enter the chamber where the boss lurks!",
+        "Vous obtenez la #grande clé# du #temple du pic des Neiges# ! Vous pouvez maintenant pénétrer dans l'antre du boss !"},
     {QM_GREEN, QM_RED}, {}, {}, 0x0, false, false);
 
     // Great Bay
     CreateMessage(0x6141, 0xFFFF, 0x3FFFFFFF, 0xFF0000, 
-    {"You got the #boss key# for the #Great Bay Temple#! Now you can enter the chamber where the boss lurks!"},
+    {"You got the #boss key# for the #Great Bay Temple#! Now you can enter the chamber where the boss lurks!",
+        "Vous obtenez la #grande clé# du #temple de la Grande Baie# ! Vous pouvez maintenant pénétrer dans l'antre du boss !"},
     {QM_GREEN, QM_RED}, {}, {}, 0x0, false, false);
 
     // Stone Tower
     CreateMessage(0x6142, 0xFFFF, 0x3FFFFFFF, 0xFF0000, 
-    {"You got the #boss key# for the #Stone Tower Temple#! Now you can enter the chamber where the boss lurks!"},
+    {"You got the #boss key# for the #Stone Tower Temple#! Now you can enter the chamber where the boss lurks!",
+        "Vous obtenez la #grande clé# du #temple de la forteresse de pierre# ! Vous pouvez maintenant pénétrer dans l'antre du boss !"},
     {QM_GREEN, QM_RED}, {}, {}, 0x0, false, false);
 
     // Kokiri Sword
     CreateMessage(0x0037, 0xFFFF, 0x3FFFFFFF, 0xFF0000, 
-    {"You got the #Kokiri Sword!# The trusty sword you're familiar with. A treasure from Kokiri Forest."},
+    {"You got the #Kokiri Sword!# The trusty sword you're familiar with. A treasure from Kokiri Forest.",
+        "Vous obtenez l'#épée Kokiri# ! Votre fidèle épée qui provient de le forêt Kokiri."},
     {QM_GREEN, QM_RED}, {}, {}, 0x0, false, false);
 
     // Ice Trap
     CreateMessage(0x0012, 0xFFFF, 0x3FFFFFFF, 0xFF0000, 
-    {"          #FOOL!#"},
+    {"          #FOOL!#",
+        "#IDIOT !#"},
     {QM_RED}, {}, {}, 0x0, false, false);
 
     //Swamp Skulltula Tokens
     CreateMessage(0x0052, 0xFFFF, 0x3FFFFFFF, 0xFF0000,
-    {"You got a #Swamp Skulltula Token#! &You have collected #=SSH#."},
+    {"You got a #Swamp Skulltula Token#! &You have collected #=SSH#.",
+        "Vous obtenez l'#âme d'une skulltula d'or des marais# !&Vous en avez maintenant #=SSH#."},
     {QM_GREEN, QM_RED}, {}, {}, 0x0, false, false);
 
     //Ocean Skulltula Tokens
     CreateMessage(0x6143, 0xFFFF, 0x3FFFFFFF, 0xFF0000,
-    {"You got an #Ocean Skulltula Token#! &You have collected #=OSH#."},
+    {"You got an #Ocean Skulltula Token#! &You have collected #=OSH#.",
+        "Vous obtenez l'#âme d'une skulltula d'or de la côte# !&Vous en avez maintenant #=OSH#."},
     {QM_BLUE, QM_RED}, {}, {}, 0x0, false, false);
 
 }
