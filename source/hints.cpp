@@ -592,11 +592,11 @@ void CreateClockTowerDoorHints() {
       "Accès aux toits strictement&interdit jusqu'à #minuit#, la&#veille #du carnaval.^"
       "#Notice d'activités du carnaval:#&Concours de performance musicale&Concours de masques singuliers&#Prix à la clé!#",
       // Spanish
-      "",
+      //"",
       // German
-      "",
+      //"",
       // Italian
-      ""
+      //""
     },
     {QM_RED, QM_RED, QM_RED, QM_MAGENTA}, {}, {}, 0x0, false, false);
   CustomMessages::CreateMessage(0x8000, 0x8001, 0x3FFFFFFF, 0x1000000, {ocarinaHint.GetEnglish().c_str()}, {QM_BLUE, QM_RED}, {}, {}, 0x083E, false, false);
