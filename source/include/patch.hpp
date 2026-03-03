@@ -15,3 +15,4 @@
 #define PATCH_SIZE_MAX 65535
 
 bool WriteAllPatches();
+bool DetectConflictingPatch();

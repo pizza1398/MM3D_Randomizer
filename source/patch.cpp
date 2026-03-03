@@ -483,3 +483,30 @@ bool WriteAllPatches() {
 
   return true;
 }
+
+bool DetectConflictingPatch() {
+  Result res = 0;
+  FS_Archive sdmcArchive = 0;
+
+  // Open SD archive
+  if (!R_SUCCEEDED(res = FSUSER_OpenArchive(&sdmcArchive, ARCHIVE_SDMC, fsMakePath(PATH_EMPTY, "")))) {
+    return false;
+  }
+
+  // Set code.bps path to correct region's luma folder
+  std::string lumaSdDir = "/luma/titles/0004000000125500/";
+  if (Settings::RegionSelect){lumaSdDir = "/luma/titles/0004000000125600/";}
+  // if (Settings::RegionSelect == REGION_JAPANESE) {lumaSdDir = "/luma/titles/00040000000D6E00/";}
+
+  Handle existingPatch;
+  if (R_SUCCEEDED(res = FSUSER_OpenFile(&existingPatch, sdmcArchive, fsMakePath(PATH_ASCII, (lumaSdDir + "code.bps").c_str()), FS_OPEN_WRITE, 0))) {
+    printf("\n\n%sFound conflicting patch!%s", RED, WHITE);
+    printf("\n\nOn your SD card, navigate to");
+    printf(("\n%s" + lumaSdDir + "%s").c_str(), YELLOW, WHITE);
+    printf("\nand remove %scode.bps%s.\n", YELLOW, WHITE);
+    return true;
+  }
+  FSFILE_Close(existingPatch);
+
+  return false;
+}

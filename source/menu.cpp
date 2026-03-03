@@ -506,6 +506,11 @@ void GenerateRandomizer() {
     SaveCachedCosmetics();
     printf("Done");
 
+    if (DetectConflictingPatch()) {
+      printf("\nPress Select to exit or B to go back to the menu.\n");
+      return;
+    }
+
     //if a blank seed was entered, make a random one
     if (Settings::seed.empty()) {
         Settings::seed = std::to_string(rand());
