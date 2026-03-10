@@ -2,3 +2,7 @@
 	path = Z3DR
 	url = https://github.com/Z3DR/mm3dr.git
 	branch = dev
+[submodule "Z3DR/cycle-reset-fixes"]
+	path = Z3DR/cycle-reset-fixes
+	url = https://github.com/Z3DR/cycle-reset-fixes.git
+	branch = Z3DR
