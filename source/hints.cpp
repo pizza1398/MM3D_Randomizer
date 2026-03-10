@@ -572,8 +572,8 @@ void CreateClockTowerDoorHints() {
       break;
     case 1:
       remainsNeededHint = {
-      /*English*/"The rumours say having #just one# is enough to make something good happen.,",
-      /*French */"D'après les rumeurs, il suffit d'en avoir #un seul# pour qu'un truc bien se produise.",
+      /*English*/"The rumours say having #three of them# causes something good to happen.",
+      /*French */"D'après les rumeurs, si on en a #trois#, un truc bien va se produire.",
       /*Spanish*/"**SPANISH**"
       };
       break;
@@ -586,8 +586,8 @@ void CreateClockTowerDoorHints() {
       break;
     case 3:
       remainsNeededHint = {
-      /*English*/"The rumours say having #three of them# causes something good to happen.",
-      /*French */"D'après les rumeurs, si on en a #trois#, un truc bien va se produire.",
+      /*English*/"The rumours say having #just one# is enough to make something good happen.,",
+      /*French */"D'après les rumeurs, il suffit d'en avoir #un seul# pour qu'un truc bien se produise.",
       /*Spanish*/"**SPANISH**"
       };
       break;
