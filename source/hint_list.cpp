@@ -13,8 +13,8 @@ void HintTable_Init() {
     --------------------------*/
     hintTable[NONE]            = HintText::Exclude({Text{"No Hint",                     "INDICE MANQUANT",              "",                             "Kein Hinweis"}});
     hintTable[PREFIX]          = HintText::Exclude({Text{"They say that ",              "Selon moi, ",                  "Según dicen, ",                "Man erzählt sich, "}});
-    hintTable[WAY_OF_THE_HERO] = HintText::Exclude({Text{" is on the way of the hero.", " est sur le chemin du héros.", " está en la senda del héroe.", " verlaufe der Weg des Helden."}});
-    hintTable[PLUNDERING]      = HintText::Exclude({Text{"plundering ",                 "explorer ",                    "inspeccionar ",                "zu plündern "}});
+    hintTable[WAY_OF_THE_HERO] = HintText::Exclude({Text{" is on the way of the hero.", " est sur le chemin du héros.", " está en la senda del héroe.", " läge auf dem Weg des Helden."}});
+    hintTable[PLUNDERING]      = HintText::Exclude({Text{"plundering ",                 "explorer ",                    "inspeccionar ",                "die Plünderung von "}});
     hintTable[FOOLISH]         = HintText::Exclude({Text{" is a foolish choice.",       " est futile.",                 " es una mala decisión.",       " sei eine närrische Wahl."}});
     hintTable[CAN_BE_FOUND_AT] = HintText::Exclude({Text{"can be found at",             "se trouve dans",               "se encuentra en",              "findet man beim"}});
     hintTable[HOARDS]          = HintText::Exclude({Text{"hoards",                      "recèle",                       "atesora",                      "hortet"}});
@@ -383,7 +383,7 @@ void HintTable_Init() {
             //obscure
             Text{"a lost fairy", "un fragment d'être", "una hada perdida", "eine verlorene Fee"}
         },  //clear
-            Text{"the Clock Town Stray Fairy", "la fée égarée de Cadranbourg", "la hada extraviada de la Ciudad", "eine verirrte Fee aus Unruh-Stadt", "", "la fée égarée de Bourg-Clocher", ""}
+            Text{"the Clock Town Stray Fairy", "la fée égarée de Cadranbourg", "la hada extraviada de la Ciudad", "die verirrte Fee aus Unruh-Stadt", "", "la fée égarée de Bourg-Clocher", ""}
     );
     hintTable[WF_STRAY_FAIRY] = HintText::Item({
             //obscure
@@ -426,7 +426,7 @@ void HintTable_Init() {
             //obscure
             Text{"a progressive bow", "une capacité de tir accrue", "un arco progresivo", "ein wachsender Bogen"}
         },  //clear
-            Text{"a progressive quiver", "un carquois progressif", "un carcaj progresivo", "ein Köcher-Upgrade"}
+            Text{"a progressive quiver", "un carquois progressif", "un carcaj progresivo", "ein Bogen-Upgrade"}
     );
     hintTable[PROGRESSIVE_WALLET] = HintText::Item({
             //obscure
@@ -442,9 +442,9 @@ void HintTable_Init() {
     );
     hintTable[PROGRESSIVE_LULLABY] = HintText::Item({
             //obscure
-            Text{"a progressive lullaby", "une fraction de mélodie", "una canción de cuna progresiva", ""}
+            Text{"a progressive lullaby", "une fraction de mélodie", "una canción de cuna progresiva", "ein unvollständiges Wiegenlied"}
         },  //clear
-            Text{"a progressive lullaby", "une berceuse progressive", "una canción de cuna progresiva", ""}
+            Text{"a progressive lullaby", "une berceuse progressive", "una canción de cuna progresiva", "ein Schlummerlied-Upgrade"}
     );
     //PROGRESSIVE_BOMBCHUS
 //BOTTLE ITEMS
@@ -1013,18 +1013,18 @@ void HintTable_Init() {
     /*----------------
     |   SHOP ITEMS   |
     ----------------*/
-    hintTable[BUY_ARROWS_10]        = HintText::Item({Text{"Buy 10 Arrows", "Acheter: Flèches (10)", "Comprar 10 flechas", "Kaufe 10 Pfeile"}});
-    hintTable[BUY_ARROWS_30]        = HintText::Item({Text{"Buy 30 Arrows", "Acheter: Flèches (30)", "Comprar 30 flechas", "Kaufe 30 Pfeile"}});
-    hintTable[BUY_BLUE_POTION]      = HintText::Item({Text{"Buy Blue Potion", "Acheter: Potion bleue", "Comprar poción azul", "Kaufe ein Blaues Elixier"}});
-    hintTable[BUY_BOMBCHU_10]       = HintText::Item({Text{"Buy 10 Bombchu", "Acheter: Bombchu (10)", "Comprar 10 bombchus", "Kaufe 10 Krabbelminen"}});
-    hintTable[BUY_BOMBS_10]         = HintText::Item({Text{"Buy 10 Bombs", "Acheter: Bombes (10)", "Comprar 10 bombas", "Kaufe 10 Bomben"}});
-    hintTable[BUY_DEKU_NUT_10]      = HintText::Item({Text{"Buy 10 Deku Nuts", "Acheter: Noix Mojos (10)", "Comprar 10 nueces Deku", "Kaufe 10 Deku-Nüsse"}});
-    hintTable[BUY_DEKU_STICK_1]     = HintText::Item({Text{"Buy 1 Deku Stick", "Acheter: Bâton Mojo (1)", "Comprar 1 palo Deku", "Kaufe einen Deku-Stab"}});
-    hintTable[BUY_FAIRYS_SPIRIT]    = HintText::Item({Text{"Buy Fairy", "Acheter: Fée", "Comprar hada", "Kaufe eine kleine Fee"}});
-    hintTable[BUY_GREEN_POTION]     = HintText::Item({Text{"Buy Green Potion", "Acheter: Potion verte", "Comprar poción verde", "Kaufe ein Grünes Elixier"}});
-    hintTable[BUY_HEROS_SHIELD]     = HintText::Item({Text{"Buy Hero Shield", "Acheter: Bouclier du Héros", "Comprar el escudo del héroe", "Kaufe einen Heroenschild"}});
-    hintTable[BUY_MAGIC_BEAN]       = HintText::Item({Text{"Buy Magic Bean", "Acheter: Haricot Magique", "Comprar habichuela mágica", "Kaufe eine Wundererbse"}});
-    hintTable[BUY_RED_POTION]       = HintText::Item({Text{"Buy Red Potion", "Acheter: Potion rouge", "Comprar poción roja", "Kaufe ein Rotes Elixier"}});
+    hintTable[BUY_ARROWS_10]     = HintText::Item({Text{"Buy 10 Arrows", "Acheter: Flèches (10)", "Comprar 10 flechas", "Kaufe 10 Pfeile"}});
+    hintTable[BUY_ARROWS_30]     = HintText::Item({Text{"Buy 30 Arrows", "Acheter: Flèches (30)", "Comprar 30 flechas", "Kaufe 30 Pfeile"}});
+    hintTable[BUY_BLUE_POTION]   = HintText::Item({Text{"Buy Blue Potion", "Acheter: Potion bleue", "Comprar poción azul", "Kaufe ein Blaues Elixier"}});
+    hintTable[BUY_BOMBCHU_10]    = HintText::Item({Text{"Buy 10 Bombchu", "Acheter: Bombchu (10)", "Comprar 10 bombchus", "Kaufe 10 Krabbelminen"}});
+    hintTable[BUY_BOMBS_10]      = HintText::Item({Text{"Buy 10 Bombs", "Acheter: Bombes (10)", "Comprar 10 bombas", "Kaufe 10 Bomben"}});
+    hintTable[BUY_DEKU_NUT_10]   = HintText::Item({Text{"Buy 10 Deku Nuts", "Acheter: Noix Mojos (10)", "Comprar 10 nueces Deku", "Kaufe 10 Deku-Nüsse"}});
+    hintTable[BUY_DEKU_STICK_1]  = HintText::Item({Text{"Buy 1 Deku Stick", "Acheter: Bâton Mojo (1)", "Comprar 1 palo Deku", "Kaufe einen Deku-Stab"}});
+    hintTable[BUY_FAIRYS_SPIRIT] = HintText::Item({Text{"Buy Fairy", "Acheter: Fée", "Comprar hada", "Kaufe eine kleine Fee"}});
+    hintTable[BUY_GREEN_POTION]  = HintText::Item({Text{"Buy Green Potion", "Acheter: Potion verte", "Comprar poción verde", "Kaufe ein Grünes Elixier"}});
+    hintTable[BUY_HEROS_SHIELD]  = HintText::Item({Text{"Buy Hero Shield", "Acheter: Bouclier du Héros", "Comprar el escudo del héroe", "Kaufe einen Heroenschild"}});
+    hintTable[BUY_MAGIC_BEAN]    = HintText::Item({Text{"Buy Magic Bean", "Acheter: Haricot Magique", "Comprar habichuela mágica", "Kaufe eine Wundererbse"}});
+    hintTable[BUY_RED_POTION]    = HintText::Item({Text{"Buy Red Potion", "Acheter: Potion rouge", "Comprar poción roja", "Kaufe ein Rotes Elixier"}});
 
     /*-----------------------
     |  SOMETIMES HINT TEXT  |
@@ -1363,7 +1363,7 @@ void HintTable_Init() {
             //obscure
             Text{"the #pirates' loot# teaches", "le #butin des pirates# enseigne", "el botín de los piratas enseña", "die #Piratenbeute# lehrt"}
         },  //clear
-            Text{"the #baby Zoras# have", "les #bébés zoras# ont", "los bebés Zora tienen", "die #Zora-Babys# haben"}
+            Text{"the #baby Zoras# have", "les #bébés zoras# ont", "los bebés Zora tienen", "die #geschlüpften Zora-Babys# haben"}
     );
     hintTable[GBC_GROTTO_CHEST] = HintText::Sometimes({
             //obscure
@@ -3853,7 +3853,7 @@ void HintTable_Init() {
             //obscure
             Text{"the home of pirates", "le foyer des pirates", "el hogar de las piratas", "die Heimat der Piraten"}
         },  //clear
-            Text{"the Pirates' Fortress", "la forteresse des pirates", "la Fortaleza Pirata", "die Piratenfestung"}
+            Text{"the Pirates' Fortress", "la forteresse des pirates", "la Fortaleza Pirata", "Piratenfestung"}
     );
     hintTable[BENEATH_THE_WELL] = HintText::DungeonName({
             //obscure
@@ -3877,13 +3877,13 @@ void HintTable_Init() {
             //obscure
             Text{"a home to muddy spiders", "un nid puant d'araignées", "un hogar para arañas lodosas", "ein Zuhause für schlammige Spinnen"}
         },  //clear
-            Text{"the Swamp Spider House", "la maison des araignées des marais", "la Casa de las Arañas del Pantano", "das Sumpf-Spinnenhaus"}
+            Text{"the Swamp Spider House", "la maison des araignées des marais", "la Casa de las Arañas del Pantano", "das Spinnenhaus im Sumpf"}
     );
     hintTable[OSH] = HintText::DungeonName({
             //obscure
             Text{"a home To swimming spiders", "un nid poussiéreux d'araignées", "un hogar para arañas nadadoras", "ein Zuhause für schwimmende Spinnen"}
         },  //clear
-            Text{"the Ocean Spider House", "la maison des araignées de la côte", "la Casa de las Arañas de la Playa", "das Meer-Spinnenhaus"}
+            Text{"the Ocean Spider House", "la maison des araignées de la côte", "la Casa de las Arañas de la Playa", "das Spinnenhaus am Meer"}
     );
     hintTable[THE_MOON] = HintText::DungeonName({
             //obscure

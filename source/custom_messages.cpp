@@ -208,7 +208,7 @@ void CreateBaselineCustomMessages() {
 
     Text GITextIntroSKey =    {"You got a #Small Key# ",       "Vous obtenez une #petite clé# ",     "¡Has obtenido una #llave pequeña# ",        "Du erhältst einen #kleinen Schlüssel# "};
     Text GITextIntroMap =     {"You found the #Dungeon Map# ", "Vous obtenez la #carte du donjon# ", "¡Has encontrado el #mapa de la mazmorra# ", "Du findest die #Labyrinth-Karte# "};
-    Text GITextIntroCompass = {"You got the #Compass# ",       "Vous obtenez la #boussole# ",        "¡Has encontrado la #brújula# ",             "Du erhieltst den #Kompass# "};
+    Text GITextIntroCompass = {"You got the #Compass# ",       "Vous obtenez la #boussole# ",        "¡Has encontrado la #brújula# ",             "Du erhältst den #Kompass# "};
     Text GITextIntroBKey =    {"You got the #Boss Key# ",      "Vous obtenez la #grande clé# ",      "¡Has obtenido la #gran llave# ",            "Du erhältst den #Master-Schlüssel# "};
     // Text GITextIntroOneKey =  {"You got the #Small Key# ",     "Vous obtenez la #petite clé# ",      "¡Has obtenido la #llave pequeña# ",         "You got the #Small Key# "};
     // Text GITextIntroKeyring = {"You got the #Key Ring# ",      "Vous obtenez le #trousseau# ",       "¡Has encontrado el #llavero# ",             "You got the #Key Ring# "};
@@ -224,7 +224,7 @@ void CreateBaselineCustomMessages() {
 
     Text GITextOutroSKey =    {
         " Use it to open a locked door in that temple.", " Utilisez-la pour ouvrir une porte de ce donjon.", "",
-        " Verwende ihn, um eine verschlossene Tür innerhalb dieses Tempels zu öffnen."
+        " Er öffnet eine verschlossene Tür innerhalb dieses Tempels."
     };
     Text GITextOutroCompass = {
         " Now many of the dungeon's hidden things will appear on the map!", " Certains des secrets de ce donjon seront maintenant visibles sur la carte!",  "",
@@ -353,7 +353,7 @@ void CreateBaselineCustomMessages() {
         // NOT Spanish
         "You got a #Swamp Skulltula Token#! &You have collected #=SSH#.",
         // German
-        "Du erhältst ein #Sumpf-Skulltula-Symbol#! &Du hast bereits #=SSH# gesammelt.",
+        "Du erhältst ein #Sumpf-Symbol einer goldenen Skulltula#! &Du hast bereits #=SSH# gesammelt.",
     },
     {QM_GREEN, QM_RED}, {}, {}, 0x0, false, false, MESSAGE_END_NORMAL);
 
@@ -365,7 +365,7 @@ void CreateBaselineCustomMessages() {
         // NOT Spanish
         "You got an #Ocean Skulltula Token#! &You have collected #=OSH#.",
         // German
-        "Du erhältst ein #Ozean-Skulltula-Symbol#! &Du hast bereits #=OSH# gesammelt.",
+        "Du erhältst ein #Meer-Symbol einer goldenen Skulltula#! &Du hast bereits #=OSH# gesammelt.",
     },
     {QM_BLUE, QM_RED}, {}, {}, 0x0, false, false, MESSAGE_END_NORMAL);
 
@@ -413,6 +413,10 @@ void CreateBaselineCustomMessages() {
     {"You got the #Clock Town Stray Fairy#! Bring it to the Fairy Fountain in North Clock Town!",
         // French
         "Vous obtenez une #fée égarée de la ville#! Apportez-la à la fontaine des fées au nord de la ville!",
+        // NOT Spanish
+        "You got the #Clock Town Stray Fairy#! Bring it to the Fairy Fountain in North Clock Town!",
+        // German
+        "Du findest die #verirrte Fee aus Unruh-Stadt#! &Bringe sie zu ihrer Quelle zurück.",
     },
     {QM_RED}, {}, {}, 0x0, false, false, MESSAGE_END_NORMAL);
 
@@ -420,6 +424,10 @@ void CreateBaselineCustomMessages() {
     {"You got a #Woodfall Stray Fairy#! &You have collected #=WFF#.",
         // French
         "Vous obtenez une #fée égarée des marais#!&Vous en avez désormais #=WFF#.",
+        // NOT Spanish
+        "You got a #Woodfall Stray Fairy#! &You have collected #=WFF#.",
+        // German
+        "Du findest eine #verirrte Fee aus dem Dämmerwald#! &Wenn du alle derselben Farbe gesammelt hast, bringe sie zu ihrer Quelle zurück.",
     },
     {QM_GREEN, QM_RED}, {}, {}, 0x0, false, false, MESSAGE_END_NORMAL);
 
@@ -427,6 +435,10 @@ void CreateBaselineCustomMessages() {
     {"You got a #Snowhead Stray Fairy#! &You have collected #=SHF#.",
         // French
         "Vous obtenez une #fée égarée des neiges#!&Vous en avez désormais #=SHF#.",
+        // NOT Spanish
+        "You got a #Snowhead Stray Fairy#! &You have collected #=SHF#.",
+        // German
+        "Du findest eine #verirrte Fee vom Pic-Hibernia#! &Wenn du alle derselben Farbe gesammelt hast, bringe sie zu ihrer Quelle zurück.",
     },
     {QM_MAGENTA, QM_RED}, {}, {}, 0x0, false, false, MESSAGE_END_NORMAL);
 
@@ -434,6 +446,10 @@ void CreateBaselineCustomMessages() {
     {"You got a #Great Bay Stray Fairy#! &You have collected #=GBF#.",
         // French
         "Vous obtenez une #fée égarée de la baie#!&Vous en avez désormais #=GBF#.",
+        // NOT Spanish
+        "You got a #Great Bay Stray Fairy#! &You have collected #=GBF#.",
+        // German
+        "Du findest eine #verirrte Fee aus der Schädelbucht#! &Wenn du alle derselben Farbe gesammelt hast, bringe sie zu ihrer Quelle zurück.",
     },
     {QM_BLUE, QM_RED}, {}, {}, 0x0, false, false, MESSAGE_END_NORMAL);
 
@@ -441,6 +457,10 @@ void CreateBaselineCustomMessages() {
     {"You got a #Stone Tower Stray Fairy#! &You have collected #=STF#.",
         // French
         "Vous obtenez une #fée égarée d'Ikana#!&Vous en avez désormais #=STF#.",
+        // NOT Spanish
+        "You got a #Stone Tower Stray Fairy#! &You have collected #=STF#.",
+        // German
+        "Du findest eine #verirrte Fee aus dem Felsenturm#! &Wenn du alle derselben Farbe gesammelt hast, bringe sie zu ihrer Quelle zurück.",
     },
     {QM_YELLOW, QM_RED}, {}, {}, 0x0, false, false, MESSAGE_END_NORMAL);
 

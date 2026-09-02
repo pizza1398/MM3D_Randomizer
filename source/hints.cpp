@@ -725,7 +725,7 @@ void CreateClockTowerDoorHints() {
     /*English*/"And one with #three eyes# and #enormous mandibles# at ",
     /*French */"Et un avec #trois yeux# et d'#énormes mandibules# situé vers ",
     /*Spanish*/"**SPANISH** ",
-    /*German */"Und eine mit #drei Augen# und #gewaltigen Mundwerkzeugen# bei ",
+    /*German */"Und eine mit #3 Augen# und #gewaltigen Mundwerkzeugen# bei ",
   }+BuildDoorText(TWINMOLDS_REMAINS);
   if (StartingOdolwaRemains.Value<u8>() == 1) {
     odolwaHint = Text{
@@ -756,14 +756,14 @@ void CreateClockTowerDoorHints() {
       /*English*/"And one with #three eyes# and #enormous mandibles# in ",
       /*French */"Et un avec #trois yeux# et d'#énormes mandibules# situé dans ",
       /*Spanish*/"**SPANISH** ",
-      /*German */"Und eine mit #drei Augen# und #gewaltigen Mundwerkzeugen# in ",
+      /*German */"Und eine mit #3 Augen# und #gewaltigen Mundwerkzeugen# in ",
     }+BuildDoorText(TWINMOLDS_REMAINS);
   }
   Text remainsNeededHint = {
     /*English*/"The rumours say having #all four# causes something good to happen.",
     /*French */"D'après les rumeurs, si on a #les quatre#, un truc bien va se produire.",
     /*Spanish*/"**SPANISH_4_REMAINS_NEEDED**",
-    /*German */"Den Gerüchten zufolge sorgen #alle vier# dafür, dass etwas Gutes passiert.",
+    /*German */"Den Gerüchten zufolge sorgen #alle 4# dafür, dass etwas Gutes passiert.",
     };
   switch (4 - MoonRemainsRequired.Value<u8>()) {
     case 0:
@@ -811,7 +811,7 @@ void CreateClockTowerDoorHints() {
       "**SPANISH**",
       // German
       "Zugang zum Dach&Betreten streng verboten!&(bis um #Mitternacht# am&Vorabend des #Karnevals#)^"
-      "#Hinweise zum Karnevalsprogramm:#&Musik-Wettbewerb&Wettbewerb: Die originellste Maske&#Tolle Preise zu gewinnen!#",
+      "#Hinweise zum Karnevalsprogramm:#&1. Musik-Wettbewerb&2. Die originellste Maske&#Tolle Preise zu gewinnen!#",
       // // Italian
       // "Porta del tetto&Ingresso vietato fino alla&#mezzanotte# della #vigilia# del&carnevale.^"
       // "**ITALIAN**",
