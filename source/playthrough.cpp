@@ -78,6 +78,7 @@ namespace Playthrough {
         PlacementLog_Clear();
       }
       CreateTingleHintText();
+      // CreateShopMessages();
       CreateClockTowerDoorHints();
       CreateMoonChildHint();
       CreateOtherHints();

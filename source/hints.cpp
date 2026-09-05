@@ -9,6 +9,7 @@
 #include "spoiler_log.hpp"
 #include "fill.hpp"
 #include "hint_list.hpp"
+#include "shops.hpp"
 #include "custom_messages.hpp"
 //#include "trial.hpp"
 //#include "entrance.hpp"
@@ -486,25 +487,24 @@ void CreateTingleHintText() {
       }
 }
 
-void CreateShopMessage(u16 messageID, ItemKey shopItem, u16 buyingPrice, bool isRepeatable) {
-  Text itemName = ItemTable(shopItem).GetName();
-  Text shopIntro = Text{"#"}+itemName+Text{
-      "&>>"
-      // itemName.NAenglish.length()  <= 30 ?  ": " : "&>>",
-      // itemName.NAfrench.length()   <= 30 ? " : " : "&>>",
-      // itemName.NAspanish.length()  <= 30 ?  ": " : "&>>",
-      // itemName.EURgerman.length()  <= 30 ?  ": " : "&>>",
-      // // itemName.EURitalian.length() <= 30 ?  ": " : "&>>",
-      // itemName.EURenglish.length() <= 30 ?  ": " : "&>>",
-      // itemName.EURfrench.length()  <= 30 ? " : " : "&>>",
-      // itemName.EURspanish.length() <= 30 ?  ": " : "&>>",
-    }+std::to_string(buyingPrice)+Text{
-      " Rupees#&", " rubis#&", " rupias#&", " Rubine#&",// " rupie#&"
-    };
+void CreateShopMessage(u16 messageID, ItemAndPrice shopItem) {
+  Text shopIntro = Text{"#"}+shopItem.Name+Text{
+    "&>>"
+    // shopItem.Name.NAenglish.length()  <= 30 ?  ": " : "&>>",
+    // shopItem.Name.NAfrench.length()   <= 30 ? " : " : "&>>",
+    // shopItem.Name.NAspanish.length()  <= 30 ?  ": " : "&>>",
+    // shopItem.Name.EURgerman.length()  <= 30 ?  ": " : "&>>",
+    // // shopItem.Name.EURitalian.length() <= 30 ?  ": " : "&>>",
+    // shopItem.Name.EURenglish.length() <= 30 ?  ": " : "&>>",
+    // shopItem.Name.EURfrench.length()  <= 30 ? " : " : "&>>",
+    // shopItem.Name.EURspanish.length() <= 30 ?  ": " : "&>>",
+  }+std::to_string(shopItem.price)+Text{
+    " Rupees#&", " rubis#&", " rupias#&", " Rubine#&",// " rupie#&"
+  };
   Text shopDescription = {"oops"};
   if ((messageID < 0x06C9) || (messageID > 0x06D8)) {
     // Regular shop
-    if (isRepeatable) {
+    if (shopItem.Repurchaseable) {
       shopDescription = {
         /*NaEnglish*/"Special deal!&Buy as many as you want!",
         /*NaFrench */"Offre spéciale!&Achetez-en à volonté!",
@@ -529,7 +529,7 @@ void CreateShopMessage(u16 messageID, ItemKey shopItem, u16 buyingPrice, bool is
     }
   } else {
     // Trading post part-timer
-    if (isRepeatable) {
+    if (shopItem.Repurchaseable) {
       shopDescription = {
         /*English*/"Pretty sure we've got a bunch.&Oh and it's, like, a special deal.",
         /*French */"On doit en avoir un tas dans le stock.&Ah oui, et c'est une offre spéciale.",
@@ -548,12 +548,12 @@ void CreateShopMessage(u16 messageID, ItemKey shopItem, u16 buyingPrice, bool is
     }
   }
 
-  CustomMessages::CreateMessageFromTextObject(messageID, 0xFFFF, (0x3FFFFC00 | buyingPrice), 0xFF0301,
+  CustomMessages::CreateMessageFromTextObject(messageID, 0xFFFF, (0x3FFFFC00 | shopItem.price), 0xFF0301,
     shopIntro+shopDescription, {QM_RED}, {}, {}, 0x0, false, false, MESSAGE_END_ENDLESS);
   // Handle blue potion variant for mushroomless hag
   // WILL OVERFLOW IN MOST LANGUAGES WHEN ITEM NAME TRIGGERS LINE BREAK
   if (messageID == 0x0843) {
-    CustomMessages::CreateMessageFromTextObject(0x0880, 0xFFFF, (0x3FFFFC00 | buyingPrice), 0xFF0301,
+    CustomMessages::CreateMessageFromTextObject(0x0880, 0xFFFF, (0x3FFFFC00 | shopItem.price), 0xFF0301,
       shopIntro+Text{
         /*NaEnglish*/"Actually, I can't get the ingredients&for this, so I'm sold out. Sorry.",
         /*NaFrench */"En fait, je n'arrive pas à trouver&les ingrédients pour ça, alors je&n'en ai plus. Désolée.",
@@ -566,7 +566,7 @@ void CreateShopMessage(u16 messageID, ItemKey shopItem, u16 buyingPrice, bool is
       }, {QM_RED}, {}, {}, 0x0, false, false, MESSAGE_END_ENDLESS);
   }
 
-  CustomMessages::CreateMessageFromTextObject(messageID + 1, 0xFFFF, (0x3FFFFC00 | buyingPrice), 0xFF1301,
+  CustomMessages::CreateMessageFromTextObject(messageID + 1, 0xFFFF, (0x3FFFFC00 | shopItem.price), 0xFF1301,
     shopIntro+">2"+Text{
       /*English*/"#Buy&Don't Buy#",
       /*French */"#J'achète&J'achète pas#",
@@ -574,6 +574,39 @@ void CreateShopMessage(u16 messageID, ItemKey shopItem, u16 buyingPrice, bool is
       /*German */"#Kaufen!&Nicht kaufen!#",
       // /*Italian*/"#Compra&Non comprare#",
     }, {QM_WHITE, QM_GREEN}, {}, {}, 0x0, false, false, MESSAGE_END_NULL);
+}
+
+void CreateShopMessages() {
+  if (Settings::Shopsanity.Is(true)) {
+    const int shopItemCount = 21; // Well in theory: I didn't (manage to) check
+    const int shopIDcount = 32;
+    u32 shopID[shopIDcount] = { // Some redundancy, probably needs culling
+      // Bomb shop
+      0x0650, 0x0652, 0x0654, 0x0656,
+      // Trading Post
+      0x06AC, 0x06AE, 0x06B0, 0x06B2,
+      0x06B4, 0x06B6, 0x06B8, 0x06BA,
+      // Trading Post (Part-Timer) (+0x1D)
+      0x06C9, 0x06CB, 0x06CD, 0x06CF,
+      0x06D1, 0x06D3, 0x06D5, 0x06D7,
+      // Potion Shop
+      0x083F, 0x0841, 0x0843,
+      // Goron Shop (Winter Prices)
+      0x0BC5, 0x0BC7, 0x0BC9,
+      // Goron Shop (Spring Prices)
+      0x0BCB, 0x0BCD, 0x0BCF,
+      // Zora Shop
+      0x12DB, 0x12DD, 0x12DF,
+      // Curiosity Shop
+      // 0x29D9, 0x29DB,
+      // Curiosity Shop (Takkuri)
+      // 0x29F2, 0x29F4, 0x29F6, 0x29F8,
+    };
+    for (u32 i = 0; i <= shopIDcount; i++) {
+      // Only correct if you forget your glasses:
+      CreateShopMessage(shopID[i], NonShopItems[i]);
+    }
+  }
 }
 
 void CreateOtherHints() {
